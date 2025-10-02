@@ -27,7 +27,7 @@ pipeline {
                     docker rm Todo-APP-container || true
 
                     # Run new container
-                    docker run -d --name Todo-APP-container -p 5000:5000 Todo-APP-container:latest
+                    docker run -d --name Todo-APP-container -p 5000:5000 Todo-APP:latest
                 '''
             }
         }
