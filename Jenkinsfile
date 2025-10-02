@@ -14,7 +14,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 bat '''
-                    docker build -t Todo-APP:latest .
+                    docker build -t todo-app:latest .
                 '''
             }
         }
@@ -23,11 +23,11 @@ pipeline {
             steps {
                 bat '''
                     # Stop old container if running
-                    docker stop Todo-APP-container || true
-                    docker rm Todo-APP-container || true
+                    docker stop todo-app-container || true
+                    docker rm todo-app-container || true
 
                     # Run new container
-                    docker run -d --name Todo-APP-container -p 5000:5000 Todo-APP:latest
+                    docker run -d --name todo-app-container -p 5000:5000 todo-app:latest
                 '''
             }
         }
