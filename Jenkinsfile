@@ -13,7 +13,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh '''
+                bat '''
                     docker build -t Todo-APP:latest .
                 '''
             }
@@ -21,7 +21,7 @@ pipeline {
 
         stage('Run Docker Container') {
             steps {
-                sh '''
+                bat '''
                     # Stop old container if running
                     docker stop Todo-APP-container || true
                     docker rm Todo-APP-container || true
