@@ -5,10 +5,10 @@ app = Flask(__name__)
 
 # MySQL RDS configuration
 db = MySQLdb.connect(
-    host="your-rds-endpoint.amazonaws.com",
-    user="admin",
-    passwd="yourpassword",
-    db="tododb"
+    host="localhost",
+    user="root",
+    passwd="root",
+    db="codenera"
 )
 
 cursor = db.cursor()
